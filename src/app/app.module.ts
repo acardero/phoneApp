@@ -8,10 +8,13 @@ import { FormsModule } from "@angular/forms";
 
 
 import { PhoneService} from './services/phone.service';
+import { EnterDetailsGuardService } from './phone-details/enter-details-guard.service';
 import { AppComponent } from './app.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneDetailsComponent } from './phone-details/phone-details.component';
 import { AddPhoneComponent } from './add-phone/add-phone.component';
+import { LeaveAddPhoneGuardService } from './add-phone/leave-add-phone-guard.service';
+import { ResolveDetailsGuardService } from './phone-details/resolve-details-guard.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,7 @@ import { AddPhoneComponent } from './add-phone/add-phone.component';
     FormsModule,
     FileUploadModule
   ],
-  providers: [PhoneService],
+  providers: [PhoneService, EnterDetailsGuardService, LeaveAddPhoneGuardService, ResolveDetailsGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

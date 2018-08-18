@@ -18,18 +18,24 @@ export class PhoneDetailsComponent implements OnInit {
     private router: Router
   ) { }
 
+  // ngOnInit() {
+  //   this.route.params.subscribe(params => {
+  //     this.getPhoneDetails(params['id']);
+  //   });
+  // }
+
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.getPhoneDetails(params['id']);
+    this.route.data.subscribe((resolved) => {
+      this.phone = resolved['phone'];
     });
   }
 
-  getPhoneDetails(id) {
-    this.phoneService.get(id)
-      .subscribe((phone) => {
-        this.phone = phone;
-      });
-  }
+  // getPhoneDetails(id) {
+  //   this.phoneService.get(id)
+  //     .subscribe((phone) => {
+  //       this.phone = phone;
+  //     });
+  // }
 
   deletePhone() {
     if (window.confirm('Are you sure?')) {

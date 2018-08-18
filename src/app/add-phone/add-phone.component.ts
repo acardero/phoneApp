@@ -45,4 +45,18 @@ export class AddPhoneComponent implements OnInit {
     this.uploader.uploadAll();
   }
 
+  isFormClean(): boolean {
+    console.log('name == brand: ', this.newPhone.name === '' || this.newPhone.brand === '')
+
+    if (this.newPhone.name === '' || this.newPhone.brand === '') {
+      return window.confirm(`
+          Unsaved changes.
+          Are you sure you want to leave?
+      `);
+    }
+  
+    return true;
+  }
+
+
 }
