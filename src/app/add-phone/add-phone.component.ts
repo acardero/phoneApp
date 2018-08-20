@@ -51,7 +51,7 @@ export class AddPhoneComponent implements OnInit {
     if (this.newPhone.name === '' || this.newPhone.brand === '') {
       return window.confirm(`
           Unsaved changes.
-          Are you sure you want to leave?
+          Are you sure you want to stop?
       `);
     }
   
